@@ -1,11 +1,3 @@
-//
-// Grouping values in structs is not merely convenient. It also allows
-// us to treat the values as a single item when storing them, passing
-// them to functions, etc.
-//
-// This exercise demonstrates how we can store structs in an array and
-// how doing so lets us print them using a loop.
-//
 const std = @import("std");
 
 const Role = enum {
@@ -33,15 +25,13 @@ pub fn main() void {
         .experience = 10,
     };
 
-    // Please add "Zump the Loud" with the following properties:
-    //
-    //     role       bard
-    //     gold       10
-    //     health     100
-    //     experience 20
-    //
-    // Feel free to run this program without adding Zump. What does
-    // it do and why?
+    // Zump the Loud
+    chars[1] = Character{
+        .role = Role.bard,
+        .gold = 10,
+        .health = 100,
+        .experience = 20,
+    };
 
     // Printing all RPG characters in a loop:
     for (chars, 0..) |c, num| {

@@ -1,7 +1,3 @@
-//
-// Now that you know how "defer" works, let's do something more
-// interesting with it.
-//
 const std = @import("std");
 
 pub fn main() void {
@@ -18,7 +14,7 @@ pub fn main() void {
 fn printAnimal(animal: u8) void {
     std.debug.print("(", .{});
 
-    std.debug.print(") ", .{}); // <---- how?!
+    defer std.debug.print(") ", .{});
 
     if (animal == 'g') {
         std.debug.print("Goat", .{});

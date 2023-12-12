@@ -1,6 +1,4 @@
 //
-// Quiz time. See if you can make this program work!
-//
 // Solve this any way you like, just be sure the output is:
 //
 //     my_num=42
@@ -9,10 +7,10 @@ const std = @import("std");
 
 const NumError = error{IllegalNumber};
 
-pub fn main() void {
+pub fn main() !void {
     const stdout = std.io.getStdOut().writer();
 
-    const my_num: u32 = getNumber();
+    const my_num: u32 = try getNumber();
 
     try stdout.print("my_num={}\n", .{my_num});
 }

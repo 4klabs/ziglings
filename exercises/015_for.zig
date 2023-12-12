@@ -1,13 +1,3 @@
-//
-// Behold the 'for' loop! For loops let you execute code for each
-// element of an array:
-//
-//     for (items) |item| {
-//
-//         // Do something with item
-//
-//     }
-//
 const std = @import("std");
 
 pub fn main() void {
@@ -15,7 +5,7 @@ pub fn main() void {
 
     std.debug.print("A Dramatic Story: ", .{});
 
-    for (???) |???| {
+    for (story) |scene| {
         if (scene == 'h') std.debug.print(":-)  ", .{});
         if (scene == 's') std.debug.print(":-(  ", .{});
         if (scene == 'n') std.debug.print(":-|  ", .{});
