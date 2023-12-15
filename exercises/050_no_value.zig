@@ -1,11 +1,4 @@
 //
-//    "We live on a placid island of ignorance in the midst
-//     of black seas of infinity, and it was not meant that
-//     we should voyage far."
-//
-//     from The Call of Cthulhu
-//       by H. P. Lovecraft
-//
 // Zig has at least four ways of expressing "no value":
 //
 // * undefined
@@ -65,10 +58,10 @@ const std = @import("std");
 const Err = error{Cthulhu};
 
 pub fn main() void {
-    var first_line1: *const [16]u8 = ???;
+    var first_line1: *const [16]u8 = undefined;
     first_line1 = "That is not dead";
 
-    var first_line2: Err!*const [21]u8 = ???;
+    var first_line2: Err!*const [21]u8 = Err.Cthulhu;
     first_line2 = "which can eternal lie";
 
     // Note we need the "{!s}" format for the error union string.
@@ -77,8 +70,8 @@ pub fn main() void {
     printSecondLine();
 }
 
-fn printSecondLine() ??? {
-    var second_line2: ?*const [18]u8 = ???;
+fn printSecondLine() void {
+    var second_line2: ?*const [18]u8 = null;
     second_line2 = "even death may die";
 
     std.debug.print("And with strange aeons {s}.\n", .{second_line2.?});

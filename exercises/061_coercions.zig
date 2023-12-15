@@ -67,7 +67,14 @@ const print = @import("std").debug.print;
 pub fn main() void {
     var letter: u8 = 'A';
 
-    const my_letter:   ???   = &letter;
+    // var five: u8 = 5;
+    // var a_five: *[1]u8 = &five;
+    //
+    // var num: u8 = 5;
+    // var maybe_num: ?u8 = num; // payload type
+    // maybe_num = null;         // null
+
+    const my_letter: ?*[1]u8 = &letter;
     //               ^^^^^^^
     //           Your type here.
     // Must coerce from &letter (which is a *u8).
