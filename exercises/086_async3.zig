@@ -13,7 +13,9 @@ pub fn main() void {
     const n = 5;
     var foo_frame = async foo(n);
 
-    ???
+    for (0..n) |_| {
+        resume foo_frame;
+    }
 
     print("\n", .{});
 }
